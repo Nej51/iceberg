@@ -1,0 +1,7 @@
+node_modules/
+public/voice.wav
+public/sfx.wav
+public/logo.png
+public/img_*.png
+out/
+*.mp4

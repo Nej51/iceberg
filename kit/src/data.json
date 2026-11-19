@@ -1,0 +1,103 @@
+{
+"as:btn": [
+297.0,
+329,
+46
+],
+"reg:Apps": [
+300,
+1111,
+74
+],
+"apps:Safari": [
+300,
+261,
+74
+],
+"apps:Sant\u00e9": [
+300,
+335,
+74
+],
+"apps:Saracroche": [
+300,
+409,
+74
+],
+"apps:Shazam": [
+300,
+483,
+74
+],
+"apps:T\u00e9l\u00e9phone": [
+300,
+631,
+74
+],
+"apps:TikTok": [
+300,
+705,
+74
+],
+"apps:Traduire": [
+300,
+779,
+74
+],
+"apps:TV": [
+300,
+853,
+74
+],
+"tel:hdr": [
+300,
+180,
+40
+],
+"tel:Jamais": [
+300,
+288,
+152
+],
+"tel:Demander le motif de l'appel": [
+300,
+452,
+176
+],
+"tel:Ne pas afficher": [
+300,
+628,
+176
+],
+"tel:Assistance composition": [
+300,
+1099,
+74
+],
+"tel:Blocage d'appels et identification": [
+300,
+1173,
+74
+],
+"bloc:Email": [
+300,
+261,
+74
+],
+"bloc:Saracroche": [
+300,
+335,
+74
+],
+"bloc:Orange T\u00e9l\u00e9phone": [
+300,
+409,
+74
+],
+"bloc:tog": [
+517,
+335,
+50
+],
+"duree": 75.9
+}
