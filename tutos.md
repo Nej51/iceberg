@@ -1,17 +1,18 @@
 # Tutos iCeberg déjà publiés
 
 À consulter avant de proposer une idée (pas de doublon). Ajouter une ligne après chaque vidéo.
+Les sujets marqués « ? » sont devinés d’après le titre : Nej peut les corriger.
 
 | Date | Titre de couverture | Sujet |
 |------|---------------------|-------|
-| avant 19/11/2026 | UN IPHONE D'OCCASION (sans bandeau bleu) | Vérifier / sécuriser un iPhone d'occasion |
-| avant 19/11/2026 | CHANGE TOUTES TES **ICÔNES** | Changer les icônes des apps |
-| avant 19/11/2026 | TON IPHONE **ENTEND** À TA PLACE | Reconnaissance des sons |
-| avant 19/11/2026 | TON **RÉVEIL** NE SONNE PAS ? | Volume de l'alarme |
-| avant 19/11/2026 | TON IPHONE SONNE MÊME EN **SILENCIEUX** | Laisser sonner certains contacts en silencieux |
-| avant 19/11/2026 | LE **CODE** QUI SAUVE TES APPELS | Code de renvoi d'appel (batterie faible) |
+| avant 19/11/2026 | UN IPHONE D'OCCASION (sans bandeau bleu) | ? iPhone d’occasion |
+| avant 19/11/2026 | CHANGE TOUTES TES **ICÔNES** | ? Changer les icônes |
+| avant 19/11/2026 | TON IPHONE **ENTEND** À TA PLACE | ? Reconnaissance des sons |
+| avant 19/11/2026 | TON **RÉVEIL** NE SONNE PAS ? | ? Réveil |
+| avant 19/11/2026 | TON IPHONE SONNE MÊME EN **SILENCIEUX** | ? Sonner en silencieux |
+| avant 19/11/2026 | LE **CODE** QUI SAUVE TES APPELS | ? Code pour les appels |
 | avant 19/11/2026 | (écran 9:41, titre inconnu) | ? |
-| avant 19/11/2026 | « Touche la personne » | Détourer une personne d'une photo (sticker) |
+| avant 19/11/2026 | « Touche la personne » | ? Détourer une personne |
 | 19/11/2026 | FINI LES APPELS DE **DÉMARCHAGE** | Saracroche + filtrer les correspondants inconnus (iOS 26) |
 
 ## Idées pas encore faites
