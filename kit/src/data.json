@@ -1,111 +1,119 @@
 {
 "reg:G\u00e9n\u00e9ral": [
 300,
-524,
+206,
 72
 ],
 "reg:Accessibilit\u00e9": [
 300,
-596,
+278,
 72
 ],
 "reg:Apparence": [
 300,
-668,
+350,
 72
 ],
 "reg:Bouton Action": [
 300,
-740,
+422,
 72
 ],
 "reg:Cam\u00e9ra": [
 300,
-812,
+494,
 72
 ],
 "reg:Centre de contr\u00f4le": [
 300,
-884,
+566,
 72
 ],
-"acc:Acc\u00e8s guid\u00e9": [
+"reg:\u00c9cran d'accueil": [
 300,
-676,
+638,
 72
 ],
-"acc:Acc\u00e8s d'aide": [
+"reg:En veille": [
 300,
-748,
+710,
 72
 ],
-"acc:Siri": [
+"reg:Fond d'\u00e9cran": [
 300,
-820,
+782,
 72
 ],
-"acc:Raccourci Accessibilit\u00e9": [
+"reg:Luminosit\u00e9 et affichage": [
 300,
-892,
+854,
 72
 ],
-"acc:R\u00e9glages selon les apps": [
+"reg:Recherche": [
 300,
-964,
+926,
 72
 ],
-"ag:Acc\u00e8s guid\u00e9": [
+"app:Liquid Glass": [
 300,
-216,
-202
+832,
+130
 ],
-"ag:Acc\u00e8s guid\u00e9:tog": [
+"lg:slider": [
+300,
+612
+],
+"lg:teinte": [
+498,
+612
+],
+"acc:VoiceOver": [
+300,
+248,
+72
+],
+"acc:Zoom": [
+300,
+320,
+72
+],
+"acc:Affichage et taille du texte": [
+300,
+392,
+72
+],
+"acc:Mouvement": [
+300,
+464,
+72
+],
+"acc:Contenu \u00e9nonc\u00e9": [
+300,
+536,
+72
+],
+"acc:Audiodescription": [
+300,
+608,
+72
+],
+"aff:R\u00e9duire la transparence": [
+300,
+524,
+130
+],
+"aff:R\u00e9duire la transparence:tog": [
 517,
-216
+524
 ],
-"ag:R\u00e9glages des codes": [
+"aff:Augmenter le contraste": [
 300,
-448,
-72
+684,
+130
 ],
-"codes:D\u00e9finir le code d'Acc\u00e8s guid\u00e9": [
-300,
-216,
-106
-],
-"sess:D\u00e9marrer": [
-508,
-110,
-140
-],
-"sess:Annuler": [
-84,
-110,
-124
-],
-"sess:reglages": [
-454,
-980,
-248
-],
-"sess:Reprendre": [
-503,
-110,
-151
-],
-"sess:Fin": [
-58,
-110,
-72
-],
-"opts:limite": [
-300,
-1056,
-72
-],
-"opts:tog": [
+"aff:Augmenter le contraste:tog": [
 517,
-1056
+684
 ],
-"duree": 61.6
+"duree": 60.65
 }
