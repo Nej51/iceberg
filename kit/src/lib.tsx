@@ -42,7 +42,7 @@ export const Icon: React.FC<{src: string; t0: number; size: number; x: number; y
     transform: `scale(${k}) rotate(${(1 - k) * -25}deg)`, filter: 'drop-shadow(0 25px 30px rgba(0,0,0,0.5))'}} />;
 };
 export const Scene: React.FC<{t0: number; t1: number; children: React.ReactNode}> = ({t0, t1, children}) => {
-  const t = useT(); if (t < t0 || t > t1 + 0.3) return null; const o = lin(t, t1, t1 + 0.3); const i = lin(t, t0, t0 + 0.25);
+  const t = useT(); if (t < t0 || t > t1 + 0.3) return null; const o = lin(t, t1, t1 + 0.3); const i = t0 <= 0 ? 1 : lin(t, t0, t0 + 0.25); // 1re scène : pas de fondu, sinon la couverture est vide
   return <AbsoluteFill style={{opacity: Math.min(i, 1 - o), filter: o > 0 ? `blur(${o * 24}px)` : undefined, transform: `scale(${1 + o * 0.15})`}}>{children}</AbsoluteFill>;
 };
 export const SW = 600, SH = 1300;
