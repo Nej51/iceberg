@@ -14,6 +14,7 @@ Les sujets marqués « ? » sont devinés d’après le titre : Nej peut les cor
 | avant 19/11/2026 | (écran 9:41, titre inconnu) | ? |
 | avant 19/11/2026 | « Touche la personne » | ? Détourer une personne |
 | 19/11/2026 | FINI LES APPELS DE **DÉMARCHAGE** | Saracroche + filtrer les correspondants inconnus (iOS 26) |
+| 20/11/2026 | AVANT DE **PRÊTER** TON IPHONE | Accès guidé (bloquer l'iPhone sur une app, code, limite de temps) |
 
 ## Idées pas encore faites
 Cacher les photos des cadeaux · Passer sur son nouvel iPhone (Démarrage rapide) · Accès guidé pour les enfants · iPhone qui s'éteint au froid · Doublons de photos · Limite de charge 80 % · Mode d'alimentation adaptatif · Trier les SMS d'inconnus · Masquer une app · Clavier = pavé tactile · Copier le texte d'une photo · Traduction en direct pendant un appel · Devises dans la Calculatrice · Partager le code Wi-Fi · Retrouver sa voiture garée · App Mesures

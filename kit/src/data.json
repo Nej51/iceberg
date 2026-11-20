@@ -1,103 +1,111 @@
 {
-"as:btn": [
-297.0,
-329,
-46
-],
-"reg:Apps": [
+"reg:G\u00e9n\u00e9ral": [
 300,
-1111,
-74
+524,
+72
 ],
-"apps:Safari": [
+"reg:Accessibilit\u00e9": [
 300,
-261,
-74
+596,
+72
 ],
-"apps:Sant\u00e9": [
+"reg:Apparence": [
 300,
-335,
-74
+668,
+72
 ],
-"apps:Saracroche": [
+"reg:Bouton Action": [
 300,
-409,
-74
+740,
+72
 ],
-"apps:Shazam": [
+"reg:Cam\u00e9ra": [
 300,
-483,
-74
+812,
+72
 ],
-"apps:T\u00e9l\u00e9phone": [
+"reg:Centre de contr\u00f4le": [
 300,
-631,
-74
+884,
+72
 ],
-"apps:TikTok": [
+"acc:Acc\u00e8s guid\u00e9": [
 300,
-705,
-74
+676,
+72
 ],
-"apps:Traduire": [
+"acc:Acc\u00e8s d'aide": [
 300,
-779,
-74
+748,
+72
 ],
-"apps:TV": [
+"acc:Siri": [
 300,
-853,
-74
+820,
+72
 ],
-"tel:hdr": [
+"acc:Raccourci Accessibilit\u00e9": [
 300,
-180,
-40
+892,
+72
 ],
-"tel:Jamais": [
+"acc:R\u00e9glages selon les apps": [
 300,
-288,
-152
+964,
+72
 ],
-"tel:Demander le motif de l'appel": [
+"ag:Acc\u00e8s guid\u00e9": [
 300,
-452,
-176
+216,
+202
 ],
-"tel:Ne pas afficher": [
-300,
-628,
-176
-],
-"tel:Assistance composition": [
-300,
-1099,
-74
-],
-"tel:Blocage d'appels et identification": [
-300,
-1173,
-74
-],
-"bloc:Email": [
-300,
-261,
-74
-],
-"bloc:Saracroche": [
-300,
-335,
-74
-],
-"bloc:Orange T\u00e9l\u00e9phone": [
-300,
-409,
-74
-],
-"bloc:tog": [
+"ag:Acc\u00e8s guid\u00e9:tog": [
 517,
-335,
-50
+216
 ],
-"duree": 75.9
+"ag:R\u00e9glages des codes": [
+300,
+448,
+72
+],
+"codes:D\u00e9finir le code d'Acc\u00e8s guid\u00e9": [
+300,
+216,
+106
+],
+"sess:D\u00e9marrer": [
+508,
+110,
+140
+],
+"sess:Annuler": [
+84,
+110,
+124
+],
+"sess:reglages": [
+454,
+980,
+248
+],
+"sess:Reprendre": [
+503,
+110,
+151
+],
+"sess:Fin": [
+58,
+110,
+72
+],
+"opts:limite": [
+300,
+1056,
+72
+],
+"opts:tog": [
+517,
+1056
+],
+"duree": 61.6
 }
