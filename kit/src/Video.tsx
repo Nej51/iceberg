@@ -1,1 +1,1 @@
-export {Video} from './isolement_voix';
+export {Video} from './double_capture';

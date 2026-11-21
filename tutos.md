@@ -21,6 +21,7 @@ Les sujets marqués « ? » sont devinés d’après le titre : Nej peut les cor
 | 21/11/2026 | ON N'ENTEND PLUS QUE **TA VOIX** | 1re vidéo format direct (« Je sais pas si tu le sais, mais si… ») — Isolement de la voix pendant un appel (Centre de contrôle > pastille Téléphone > Audio et vidéo) |
 | 21/11/2026 | RECHARGE UN IPHONE AVEC **TON IPHONE** | Recharger un iPhone avec un autre iPhone en USB-C (iPhone 15+), piège Lightning, 4,5 W, bonus écouteurs/montre ; version TikTok avec batterie TikTok Shop, version Insta/YouTube sans |
 | 21/11/2026 | TON IPHONE EST **PLEIN ?** | Vider ses photos sur une carte SD avec un lecteur Lightning/USB-C (Photos > Partager > Enregistrer dans Fichiers), pièges Supprimés récemment + Photos iCloud ; version TikTok Shop (lecteur de carte) |
+| 22/11/2026 | FILME AVEC TES **DEUX CAMÉRAS** | Double capture (Appareil photo > Vidéo > bouton six points > Double capture, iPhone 17+), pièges : tout collé dans une seule vidéo, 30 i/s ; bonus zoom ; quitter via l'icône à côté de HD |
 
 ## Idées pas encore faites
 Cacher les photos des cadeaux · Passer sur son nouvel iPhone (Démarrage rapide) · Accès guidé pour les enfants · iPhone qui s'éteint au froid · Doublons de photos · Limite de charge 80 % · Mode d'alimentation adaptatif · Trier les SMS d'inconnus · Masquer une app · Copier le texte d'une photo · Traduction en direct pendant un appel · Devises dans la Calculatrice · Partager le code Wi-Fi · Retrouver sa voiture garée · App Mesures
