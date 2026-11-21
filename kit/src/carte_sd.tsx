@@ -31,7 +31,7 @@ export const Video: React.FC = () => {
       <Photo src="img_plein.png" t0={0} t1={6.7} dim={0.2} />
       <CoverTitle line="TON IPHONE EST" keyword="PLEIN ?" />
       <Sent top={290} t0={2.0} t1={6.6} words={[[2.05, 'Vide tes photos'], [2.9, 'sur une carte SD', ELEC]]} size={62} />
-      <Sent top={385} t0={4.4} t1={6.6} words={[[4.5, 'sans ordi,'], [5.5, 'sans payer iCloud', GRN]]} size={54} />
+      <Sent top={470} t0={4.4} t1={6.6} words={[[4.5, 'sans ordi,'], [5.5, 'sans payer iCloud', GRN]]} size={54} />
       <Pill t0={3.8} x={540} y={1400} size={52} border={ELEC}>en une minute</Pill>
     </Scene>
 
