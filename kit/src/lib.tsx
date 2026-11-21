@@ -152,7 +152,8 @@ export const pick = (t: number, list: [number, string][]) => { let s = list[0][1
 // TITRE DE COUVERTURE (obligatoire, frame 0 -> 1,6 s). line = texte blanc, key = mot sur bandeau bleu
 export const CoverTitle: React.FC<{line: string; keyword: string; after?: string; size?: number}> = ({line, keyword, after, size = 104}) => {
   const t = useT(); if (t >= 2.0) return null; const o = lin(t, 1.6, 2.0);
-  return <div style={{position: 'absolute', top: 280, left: 60, width: 960, textAlign: 'center', filter: `blur(${o * 20}px)`, opacity: 1 - o}}>
+  return <div style={{position: 'absolute', top: 0, left: 0, width: 1080, height: 1920, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '0 60px', boxSizing: 'border-box',
+    background: `radial-gradient(ellipse 75% 22% at 50% 50%, rgba(0,0,20,${0.55 * (1 - o)}), transparent)`, filter: `blur(${o * 20}px)`, opacity: 1 - o}}>
     {line && <div style={{fontFamily: 'Pop', fontWeight: 700, fontSize: size, color: '#fff', lineHeight: 1.08, textShadow: TS}}>{line}</div>}
     <div style={{display: 'inline-block', marginTop: 18, background: ELEC, borderRadius: 22, padding: '6px 34px', fontFamily: 'Pop', fontWeight: 700, fontSize: size + 8, color: '#fff', boxShadow: `0 0 50px ${ELEC}`}}>{keyword}</div>
     {after && <div style={{fontFamily: 'Pop', fontWeight: 700, fontSize: size, color: '#fff', lineHeight: 1.08, textShadow: TS, marginTop: 10}}>{after}</div>}
