@@ -141,10 +141,10 @@ json.dump(POS, open('scripts/iv_pos.json', 'w'))
 print(POS)
 
 # ---- data.json + sons
-POS['duree'] = 63.4
+POS['duree'] = 61.8
 json.dump(POS, open('src/data.json', 'w'), indent=0)
 import wave, numpy as np
-T = 63.6; SR = 44100; au = np.zeros(int(T*SR), np.float32)
+T = 62.2; SR = 44100; au = np.zeros(int(T*SR), np.float32)
 def add(t, x):
     i = int(t*SR); x = x[:len(au)-i]; au[i:i+len(x)] += x
 def tone(f0, f1, dd, v, dec=6):
@@ -155,10 +155,9 @@ def soft():
     return ((np.sin(2*np.pi*587.33*k)*0.6+np.sin(2*np.pi*880*k)*0.28+np.sin(2*np.pi*1174.66*k)*0.08)*env*0.30).astype(np.float32)
 S = {'soft': soft(), 'pop': tone(520, 900, 0.09, 0.2), 'tick': tone(1400, 1100, 0.06, 0.18), 'ding': tone(1320, 1320, 0.5, 0.2)+tone(1980, 1980, 0.5, 0.09),
      'err': tone(300, 220, 0.25, 0.22, 4), 'swoosh': tone(400, 1200, 0.3, 0.1, 3)}
-SC = [2.0, 6.1, 12.6, 20.1, 26.8, 31.8, 36.2, 40.0, 43.7, 47.6, 55.8, 57.94, 60.16]
+SC = [2.0, 6.4, 14.1, 19.36, 22.72, 27.1, 30.1, 37.45, 46.0, 51.7, 55.95, 58.3]
 ev = [(s, 'soft') for s in SC]
-ev += [(4.12, 'pop'), (7.36, 'err'), (10.12, 'pop'), (10.68, 'pop'), (11.3, 'pop'), (13.74, 'swoosh'), (16.9, 'pop'), (18.6, 'pop'),
-       (22.1, 'swoosh'), (24.4, 'tick'), (28.9, 'tick'), (30.2, 'tick'), (33.7, 'tick'), (37.42, 'tick'), (38.1, 'ding'), (46.3, 'pop'), (49.3, 'pop'), (50.2, 'err'),
-       (52.0, 'ding'), (54.34, 'pop'), (54.84, 'pop'), (56.4, 'pop')]
+ev += [(5.7, 'pop'), (8.8, 'swoosh'), (11.8, 'tick'), (16.3, 'tick'), (18.2, 'tick'), (21.54, 'tick'), (24.98, 'tick'), (25.64, 'ding'), (33.54, 'swoosh'),
+       (35.28, 'pop'), (36.02, 'pop'), (36.48, 'pop'), (38.5, 'err'), (39.44, 'pop'), (40.86, 'pop'), (47.6, 'ding'), (49.74, 'pop'), (50.28, 'pop'), (54.24, 'pop')]
 for a, k in ev: add(a, S[k]*0.35/0.3)
 au = np.clip(au, -1, 1); w = wave.open(OUT+'sfx.wav', 'wb'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((au*32767).astype(np.int16).tobytes()); w.close()
