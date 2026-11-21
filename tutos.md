@@ -17,6 +17,7 @@ Les sujets marqués « ? » sont devinés d’après le titre : Nej peut les cor
 | 20/11/2026 | AVANT DE **PRÊTER** TON IPHONE | Accès guidé (bloquer l'iPhone sur une app, code, limite de temps) |
 | 20/11/2026 | TON IPHONE EST **ILLISIBLE** ? | Liquid Glass Teinté (Réglages > Apparence) + Augmenter le contraste + Réduire la transparence |
 | 20/11/2026 | TON CLAVIER TE **CACHE** UN SECRET | Zones de touche invisibles du clavier qui grossissent selon la lettre devinée |
+| 21/11/2026 | TON CLAVIER CACHE **UNE SOURIS** (format court 16 s, sans voix, sur son funk) | Appui long sur la barre espace = pavé tactile |
 
 ## Idées pas encore faites
-Cacher les photos des cadeaux · Passer sur son nouvel iPhone (Démarrage rapide) · Accès guidé pour les enfants · iPhone qui s'éteint au froid · Doublons de photos · Limite de charge 80 % · Mode d'alimentation adaptatif · Trier les SMS d'inconnus · Masquer une app · Clavier = pavé tactile · Copier le texte d'une photo · Traduction en direct pendant un appel · Devises dans la Calculatrice · Partager le code Wi-Fi · Retrouver sa voiture garée · App Mesures
+Cacher les photos des cadeaux · Passer sur son nouvel iPhone (Démarrage rapide) · Accès guidé pour les enfants · iPhone qui s'éteint au froid · Doublons de photos · Limite de charge 80 % · Mode d'alimentation adaptatif · Trier les SMS d'inconnus · Masquer une app · Copier le texte d'une photo · Traduction en direct pendant un appel · Devises dans la Calculatrice · Partager le code Wi-Fi · Retrouver sa voiture garée · App Mesures
