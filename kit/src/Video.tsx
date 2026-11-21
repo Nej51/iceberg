@@ -1,1 +1,1 @@
-export {Video} from './liquid_glass';
+export {Video} from './isolement_voix';

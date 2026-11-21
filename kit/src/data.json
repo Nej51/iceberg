@@ -1,119 +1,31 @@
 {
-"reg:G\u00e9n\u00e9ral": [
+"cc:pill": [
 300,
-206,
-72
+107
 ],
-"reg:Accessibilit\u00e9": [
+"mn:av": [
 300,
-278,
-72
+400
 ],
-"reg:Apparence": [
+"mn:card": [
 300,
-350,
-72
+763
 ],
-"reg:Bouton Action": [
-300,
-422,
-72
+"mn:Automatique": [
+408,
+655
 ],
-"reg:Cam\u00e9ra": [
-300,
-494,
-72
+"mn:Standard": [
+408,
+727
 ],
-"reg:Centre de contr\u00f4le": [
-300,
-566,
-72
+"mn:Isolement de la voix": [
+408,
+799
 ],
-"reg:\u00c9cran d'accueil": [
-300,
-638,
-72
+"mn:Large spectre": [
+408,
+871
 ],
-"reg:En veille": [
-300,
-710,
-72
-],
-"reg:Fond d'\u00e9cran": [
-300,
-782,
-72
-],
-"reg:Luminosit\u00e9 et affichage": [
-300,
-854,
-72
-],
-"reg:Recherche": [
-300,
-926,
-72
-],
-"app:Liquid Glass": [
-300,
-832,
-130
-],
-"lg:slider": [
-300,
-612
-],
-"lg:teinte": [
-498,
-612
-],
-"acc:VoiceOver": [
-300,
-248,
-72
-],
-"acc:Zoom": [
-300,
-320,
-72
-],
-"acc:Affichage et taille du texte": [
-300,
-392,
-72
-],
-"acc:Mouvement": [
-300,
-464,
-72
-],
-"acc:Contenu \u00e9nonc\u00e9": [
-300,
-536,
-72
-],
-"acc:Audiodescription": [
-300,
-608,
-72
-],
-"aff:R\u00e9duire la transparence": [
-300,
-524,
-130
-],
-"aff:R\u00e9duire la transparence:tog": [
-517,
-524
-],
-"aff:Augmenter le contraste": [
-300,
-684,
-130
-],
-"aff:Augmenter le contraste:tog": [
-517,
-684
-],
-"duree": 60.65
+"duree": 63.4
 }
