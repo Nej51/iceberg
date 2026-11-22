@@ -1,1 +1,1 @@
-export {Video} from './double_capture';
+export {Video} from './sons_ambiance';

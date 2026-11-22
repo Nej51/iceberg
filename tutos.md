@@ -23,6 +23,7 @@ Les sujets marqués « ? » sont devinés d’après le titre : Nej peut les cor
 | 21/11/2026 | TON IPHONE EST **PLEIN ?** | Vider ses photos sur une carte SD avec un lecteur Lightning/USB-C (Photos > Partager > Enregistrer dans Fichiers), pièges Supprimés récemment + Photos iCloud ; version TikTok Shop (lecteur de carte) |
 | 22/11/2026 | FILME AVEC TES **DEUX CAMÉRAS** | Double capture (Appareil photo > Vidéo > bouton six points > Double capture, iPhone 17+), pièges : tout collé dans une seule vidéo, 30 i/s ; bonus zoom ; quitter via l'icône à côté de HD |
 | 22/11/2026 | TON IPHONE CACHE **TOUT ÇA** (teaser 25 s, TikTok) | Teaser du compte : 3 astuces (double capture, isolement voix, accès guidé) + « envoie à quelqu'un qui a un iPhone » |
+| 22/11/2026 | TON IPHONE T’AIDE À **DORMIR** | Sons en arrière-plan + Musique d’ambiance (Repos, Relaxation, Productivité, Bien-être) ajoutés au centre de contrôle ; piège « Ne plus lire les sons en mode verrouillé » ; bonus « Couper les sons avec un minuteur » ; images ChatGPT + début dynamique (une image par mot) |
 
 ## Idées pas encore faites
 Cacher les photos des cadeaux · Passer sur son nouvel iPhone (Démarrage rapide) · Accès guidé pour les enfants · iPhone qui s'éteint au froid · Doublons de photos · Limite de charge 80 % · Mode d'alimentation adaptatif · Trier les SMS d'inconnus · Masquer une app · Copier le texte d'une photo · Traduction en direct pendant un appel · Devises dans la Calculatrice · Partager le code Wi-Fi · Retrouver sa voiture garée · App Mesures
