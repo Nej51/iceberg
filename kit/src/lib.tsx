@@ -161,7 +161,7 @@ export const CoverTitle: React.FC<{line: string; keyword: string; after?: string
 };
 
 // FIN : « Enregistre cette vidéo » (t0) puis logo + « Abonne-toi » (t1). Mots calés sur la voix via les temps donnés.
-export const EndScreen: React.FC<{t0: number; t1: number; tEnd: number; tAbonne: number; tPour: number; tImmergee: number}> = ({t0, t1, tEnd, tAbonne, tPour, tImmergee}) => {
+export const EndScreen: React.FC<{t0: number; t1: number; tEnd: number; tAbonne: number; tPour: number; tImmergee: number; handle?: string}> = ({t0, t1, tEnd, tAbonne, tPour, tImmergee, handle = '@iphoneiceberg'}) => {
   const t = useT();
   return <>
     <Scene t0={t0} t1={t1}>
@@ -175,7 +175,7 @@ export const EndScreen: React.FC<{t0: number; t1: number; tEnd: number; tAbonne:
       {(() => { const k = sp(t, t1 + 0.05, 9); return <Img src={staticFile('logo.png')} style={{position: 'absolute', left: 240, top: 440 + 8 * Math.sin(t * 2.2), width: 600, height: 600, transform: `scale(${k}) rotate(${(1 - k) * -20}deg)`, filter: 'drop-shadow(0 0 40px rgba(110,80,255,0.7))'}} />; })()}
       <Sent top={1080} t0={t1} t1={tEnd + 2} words={[[tPour, 'pour découvrir la partie']]} size={58} />
       <Sent top={1155} t0={t1} t1={tEnd + 2} words={[[tImmergee, 'immergée', ELEC], [tImmergee + 0.5, 'de ton iPhone']]} size={58} />
-      <Pill t0={tImmergee - 0.3} x={540} y={1340} size={46} border="#4fd7ff">@iphoneiceberg</Pill>
+      <Pill t0={tImmergee - 0.3} x={540} y={1340} size={46} border="#4fd7ff">{handle}</Pill>
     </Scene>
   </>;
 };
