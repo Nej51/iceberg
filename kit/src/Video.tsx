@@ -1,1 +1,1 @@
-export {Video} from './ecran_verrouille';
+export {Video} from './trois_astuces';
