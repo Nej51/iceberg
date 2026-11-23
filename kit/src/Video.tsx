@@ -1,1 +1,1 @@
-export {Video} from './sons_ambiance';
+export {Video} from './ecran_verrouille';
