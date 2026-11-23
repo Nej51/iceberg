@@ -1,1 +1,1 @@
-export {Video} from './trois_astuces';
+export {Video} from './whatsapp_invisible';
