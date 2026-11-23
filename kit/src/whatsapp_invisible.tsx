@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill, Img, staticFile} from 'remotion';
 import {useT, sp, lin, Sent, Background, Glass, Icon, Scene, Phone, ZoomPhone, StepTag, HiBox, Stamp, Pill, Photo, pick, fontCss, ELEC, RED, GRN, YEL, CoverTitle, EndScreen, Finish} from './lib';
 import data from './data.json';
 // Vidéo « Conversation WhatsApp invisible » (code secret), 23/11/2026. 1re vidéo sans « Je sais pas si tu le sais ».
@@ -52,7 +52,8 @@ export const Video: React.FC = () => {
       <Sent top={375} t0={3.1} t1={8.8} words={[[3.32, 'qui n’apparaît'], [3.72, 'nulle part', YEL]]} size={58} />
       <Pill t0={4.9} x={540} y={1300} size={44} border={WG}>sauf avec ton code secret</Pill>
       <Pill t0={6.6} x={540} y={1420} size={40} border={ELEC}>3 étapes</Pill>
-      <CoverTitle line="TA CONVERSATION DEVIENT" keyword="INVISIBLE" size={92} />
+      <CoverTitle line="RENDS TA CONVERSATION WHATSAPP" keyword="INVISIBLE" size={88} />
+      {t < 2.0 && <Img src={staticFile('logo_wa.png')} style={{position: 'absolute', left: 540 - 130, top: 470 + 6 * Math.sin(t * 3), width: 260, height: 260, objectFit: 'contain', opacity: 1 - lin(t, 1.6, 2.0), filter: `drop-shadow(0 0 40px rgba(37,211,102,0.8)) blur(${lin(t, 1.6, 2.0) * 20}px)`}} />}
     </Scene>
 
     {/* ÉTAPES */}
