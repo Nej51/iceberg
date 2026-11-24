@@ -3,7 +3,7 @@ import {AbsoluteFill, Img, OffthreadVideo, Sequence, staticFile} from 'remotion'
 import {useT, sp, lin, Sent, Background, Glass, Scene, Stamp, Pill, Glow, fontCss, ELEC, RED, GRN, YEL, ORG, TS, CoverTitle, EndScreen, Finish} from './lib';
 // Vidéo « Voici l'iPhone 20 » (rumeurs iPhone 20 Pro), 24/11/2026. Images = vidéo source découpée dans une carte.
 export const TOTAL = 62.7;
-const CX = 60, CY = 660, CW = 960, CH = 540;
+const CX = 20, CY = 565, CW = 1040, CH = 890;
 
 // carte vidéo : clips = [début (s voix), début dans clip.mp4 (s), vitesse]
 const Card: React.FC<{t0: number; t1: number; clips: [number, number, number][]; enter?: boolean}> = ({t0, t1, clips, enter = true}) => {
@@ -12,18 +12,23 @@ const Card: React.FC<{t0: number; t1: number; clips: [number, number, number][];
   let ci = 0; for (let i = 0; i < clips.length; i++) if (t >= clips[i][0]) ci = i;
   const pk = sp(t, clips[ci][0], 12); const cut = ci > 0;
   const dy = 8 * Math.sin(t * 1.1), ry = 2.5 * Math.sin(t * 0.7), rx = (1 - k) * 30 + 1.5 * Math.sin(t * 0.9);
-  return <div style={{position: 'absolute', left: CX, top: CY, width: CW, height: CH, perspective: 1800, opacity: Math.min(1, k * 1.5) * (1 - o),
+  const vids = (bg: boolean) => clips.map(([a, from, rate], i) => { const b = i + 1 < clips.length ? clips[i + 1][0] : t1 + 0.4;
+    return <Sequence key={i} from={Math.round(a * 30)} durationInFrames={Math.max(1, Math.round((b - a) * 30) + 1)} layout="none">
+      <div style={{position: 'absolute', inset: 0, transform: `scale(${!bg && i === ci && cut ? 1 + 0.12 * (1 - pk) : bg ? 1.15 : 1.0})`}}>
+        <OffthreadVideo src={staticFile('clip.mp4')} startFrom={Math.round(from * 30)} playbackRate={rate} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} /></div></Sequence>; });
+  return <>
+  <div style={{position: 'absolute', zIndex: -1, left: 0, top: 0, width: 1080, height: 1920, overflow: 'hidden', opacity: (1 - o) * Math.min(1, k * 1.5), filter: 'blur(45px) brightness(0.5) saturate(1.3)'}}>{vids(true)}</div>
+  <div style={{position: 'absolute', zIndex: -1, left: 0, top: 0, width: 1080, height: 1920, background: 'linear-gradient(180deg, rgba(5,6,15,0.85) 0%, rgba(5,6,15,0.35) 30%, rgba(5,6,15,0.2) 60%, rgba(18,10,46,0.8) 100%)', opacity: 1 - o}} />
+  <div style={{position: 'absolute', left: CX, top: CY, width: CW, height: CH, perspective: 1800, opacity: Math.min(1, k * 1.5) * (1 - o),
     transform: `translateY(${dy + (1 - k) * 260}px) scale(${(0.82 + 0.18 * k) * (1 - o * 0.08)})`}}>
-    <div style={{position: 'absolute', inset: -90, borderRadius: 120, background: 'radial-gradient(ellipse at center, rgba(47,91,255,0.55), rgba(106,44,255,0.25) 50%, transparent 75%)', filter: 'blur(50px)'}} />
+    <div style={{position: 'absolute', inset: -60, borderRadius: 120, background: 'radial-gradient(ellipse at center, rgba(47,91,255,0.55), rgba(106,44,255,0.25) 50%, transparent 75%)', filter: 'blur(50px)'}} />
     <div style={{position: 'absolute', inset: 0, borderRadius: 44, overflow: 'hidden', background: '#000', border: '2px solid rgba(255,255,255,0.3)',
-      boxShadow: '0 40px 100px rgba(0,0,0,0.75), 0 0 60px rgba(47,91,255,0.35)', transform: `rotateX(${rx}deg) rotateY(${ry}deg)`}}>
-      {clips.map(([a, from, rate], i) => { const b = i + 1 < clips.length ? clips[i + 1][0] : t1 + 0.4;
-        return <Sequence key={i} from={Math.round(a * 30)} durationInFrames={Math.max(1, Math.round((b - a) * 30) + 1)} layout="none">
-          <div style={{position: 'absolute', inset: 0, transform: `scale(${i === ci && cut ? 1 + 0.12 * (1 - pk) : 1.0})`}}>
-            <OffthreadVideo src={staticFile('clip.mp4')} startFrom={Math.round(from * 30)} playbackRate={rate} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} /></div></Sequence>; })}
+      boxShadow: '0 40px 100px rgba(0,0,0,0.75), 0 0 60px rgba(47,91,255,0.35)', transform: `rotateX(${rx*0.6}deg) rotateY(${ry*0.6}deg)`}}>
+      {vids(false)}
       {cut && <div style={{position: 'absolute', inset: 0, background: '#fff', opacity: 0.35 * (1 - Math.min(1, pk * 1.6))}} />}
       <div style={{position: 'absolute', inset: 0, background: `linear-gradient(${115 + ry * 6}deg, rgba(255,255,255,0.14) 0%, transparent 25%, transparent 75%, rgba(255,255,255,0.06) 100%)`}} />
-    </div></div>;
+      <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 220, background: 'linear-gradient(180deg, transparent, rgba(0,0,0,0.55))'}} />
+    </div></div></>;
 };
 
 const RumorTag: React.FC<{n: number; t0: number}> = ({n, t0}) => {
@@ -45,7 +50,7 @@ const RumorBar: React.FC<{cur: number; t0: number}> = ({cur, t0}) => {
   </div>;
 };
 const Under: React.FC<{t0: number; t1: number; children: React.ReactNode; border?: string; size?: number}> = ({t0, t1, children, border, size = 44}) => {
-  const t = useT(); if (t > t1) return null; return <Pill t0={t0} x={540} y={1265} size={size} border={border}>{children}</Pill>;
+  const t = useT(); if (t > t1) return null; return <Pill t0={t0} x={540} y={1370} size={size} border={border}>{children}</Pill>;
 };
 // mini iPhone (courbé = bords lumineux arrondis, plat = coins nets)
 const Mini: React.FC<{x: number; y: number; w: number; h: number; t0: number; curved: boolean; label?: string; color?: string}> = ({x, y, w, h, t0, curved, label, color = ELEC}) => {
@@ -74,7 +79,7 @@ export const Video: React.FC = () => {
     {/* ACCROCHE */}
     <Scene t0={0} t1={6.6}>
       <Card t0={0} t1={6.6} enter={false} clips={[[0, 18.3, 0.85], [5.0, 22.4, 1]]} />
-      <CoverTitle line="VOICI L’" keyword="IPHONE 20" />
+      <CoverTitle line="VOICI L’" keyword="IPHONE 20" size={118} />
       <Sent top={280} t0={2.0} t1={7} words={[[2.0, 'Pas d’iPhone'], [2.0, '19 Pro', RED]]} size={76} />
       <Sent top={380} t0={2.0} t1={7} words={[[2.46, 'mais un'], [3.04, 'iPhone 20 Pro', ELEC]]} size={76} />
       <Under t0={4.1} t1={5.0} border="#4fd7ff">aux bords incurvés</Under>
@@ -90,7 +95,6 @@ export const Video: React.FC = () => {
       <Sent top={485} t0={13.5} t1={17} words={[[15.4, 'presque'], [16.26, 'invisibles', GRN]]} size={56} />
       <Card t0={6.8} t1={16.85} clips={[[6.8, 8.23, 0.7], [9.4, 9.73, 0.7], [12.3, 25.7, 0.65]]} />
       <Under t0={9.42} t1={13.4}>Mark Gurman · Bloomberg</Under>
-      <RumorBar cur={1} t0={7.3} />
     </Scene>
 
     {/* RUMEUR 2 : 4 prototypes */}
@@ -99,14 +103,9 @@ export const Video: React.FC = () => {
       <Sent top={400} t0={17.5} t1={20.9} words={[[18.02, 'Apple testerait'], [19.1, '4 prototypes', ELEC]]} size={62} />
       <Sent top={400} t0={20.9} t1={25} words={[[21.0, '2 courbés', ELEC], [23.2, '+ 2 plats', YEL]]} size={66} />
       <Sent top={485} t0={20.9} t1={25} words={[[24.2, 'au cas où', SOFTC]]} size={52} />
-      <Card t0={16.9} t1={20.85} clips={[[16.9, 13.9, 0.62]]} />
-      <Box t0={20.9} t1={24.85}>
-        <Mini x={150} y={240} w={150} h={300} t0={21.0} curved label="courbé" />
-        <Mini x={370} y={240} w={150} h={300} t0={21.25} curved label="courbé" />
-        <Mini x={590} y={240} w={150} h={300} t0={23.2} curved={false} label="plat" color={YEL} />
-        <Mini x={810} y={240} w={150} h={300} t0={23.4} curved={false} label="plat" color={YEL} />
-      </Box>
-      <RumorBar cur={2} t0={17.1} />
+      <Card t0={16.9} t1={24.85} clips={[[16.9, 13.9, 0.62], [20.9, 22.4, 0.85]]} />
+      <Under t0={21.0} t1={23.15} border={ELEC}>2 avec écran courbé</Under>
+      <Under t0={23.2} t1={30} border={YEL}>2 avec écran plat</Under>
     </Scene>
 
     {/* RUMEUR 3 : 200 Mpx */}
@@ -116,7 +115,6 @@ export const Video: React.FC = () => {
       <Sent top={485} t0={27.9} t1={32} words={[[28.02, 'meilleure'], [30.22, 'la nuit', ELEC], [30.62, 'et en contre-jour']]} size={50} />
       <Card t0={24.9} t1={31.6} clips={[[24.9, 5.0, 1.0], [28.0, 11.67, 0.55]]} />
       <Under t0={26.3} t1={40} border={ELEC} size={50}><span style={{color: '#fff'}}><Count t0={26.36} to={200} dur={1.1} /></span><span style={{color: SOFTC}}>mégapixels</span></Under>
-      <RumorBar cur={3} t0={25.0} />
     </Scene>
 
     {/* RUMEUR 4 : boutons, puce, batterie, écran, Dynamic Island */}
@@ -128,15 +126,11 @@ export const Video: React.FC = () => {
       <Sent top={400} t0={37.95} t1={42.45} words={[[38.38, 'Un écran plus'], [38.52, 'grand', ELEC]]} size={66} />
       <Sent top={400} t0={42.45} t1={45.3} words={[[42.66, 'Dynamic Island'], [43.62, 'conservée', GRN]]} size={62} />
       <Sent top={485} t0={42.45} t1={45.3} words={[[44.4, 'mais plus petite']]} size={52} />
-      <Card t0={31.7} t1={37.9} clips={[[31.7, 0.3, 0.9], [34.0, 16.4, 0.9], [36.1, 2.3, 1.0]]} />
+      <Card t0={31.7} t1={44.95} clips={[[31.7, 0.3, 0.9], [34.0, 16.4, 0.9], [36.1, 2.3, 1.0], [37.95, 18.3, 0.95], [42.45, 10.2, 0.5]]} />
       <Under t0={34.3} t1={36.0} border={ELEC}>Puce A21 Pro</Under>
       <Under t0={36.2} t1={37.9} border={GRN}>Batterie plus endurante</Under>
-      <Box t0={37.95} t1={42.4}>
-        <Mini x={300} y={300} w={190} h={390} t0={39.66} curved label={'Pro : 6,4"'} />
-        <Mini x={660} y={275} w={215} h={440} t0={41.22} curved label={'Pro Max : ≈ 7"'} color="#b48cff" />
-      </Box>
-      <Card t0={42.45} t1={44.95} clips={[[42.45, 10.2, 0.5]]} />
-      <RumorBar cur={4} t0={32.0} />
+      <Under t0={39.66} t1={41.15} border={ELEC}>Pro : 6,4 pouces</Under>
+      <Under t0={41.22} t1={42.4} border="#b48cff">Pro Max : presque 7 pouces</Under>
     </Scene>
 
     {/* RIEN N'EST SÛR + PARTAGE */}
@@ -151,11 +145,9 @@ export const Video: React.FC = () => {
 
     {/* PETIT DÉBAT */}
     <Scene t0={53.6} t1={56.25}>
-      <Glow x={540} y={1000} r={330} color="#3b2cff" />
-      <Sent top={330} t0={53.6} t1={57} words={[[54.2, 'Et toi ?', YEL]]} size={110} />
-      <Mini x={300} y={950} w={220} h={450} t0={55.2} curved label="Courbé" />
-      <div style={{position: 'absolute', left: 0, width: 1080, top: 900, textAlign: 'center', fontFamily: 'Pop', fontWeight: 700, fontSize: 70, color: '#fff', textShadow: TS, opacity: lin(t, 55.6, 55.8)}}>ou</div>
-      <Mini x={780} y={950} w={220} h={450} t0={55.9} curved={false} label="Plat" color={YEL} />
+      <Sent top={290} t0={53.6} t1={57} words={[[54.2, 'Et toi ?', YEL]]} size={80} />
+      <Sent top={395} t0={53.6} t1={57} words={[[55.18, 'Courbé', ELEC], [55.64, 'ou'], [56.0, 'plat ?', YEL]]} size={80} />
+      <Card t0={53.65} t1={56.25} clips={[[53.65, 18.6, 0.8]]} />
     </Scene>
 
     <EndScreen t0={56.26} t1={58.8} tEnd={61.2} tAbonne={58.86} tPour={59.28} tImmergee={60.24} />
