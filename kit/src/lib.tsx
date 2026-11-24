@@ -184,3 +184,32 @@ export const EndScreen: React.FC<{t0: number; t1: number; tEnd: number; tAbonne:
 export const Finish: React.FC<{total: number}> = ({total}) => { const t = useT();
   return <><div style={{position: 'absolute', left: 0, top: 0, height: 8, width: `${(t / total) * 100}%`, background: ELEC, boxShadow: `0 0 20px ${ELEC}`}} />
     <Audio src={staticFile('voice.wav')} /><Audio src={staticFile('sfx.wav')} /></>; };
+
+// ===== OUTILS AJOUTÉS LE 24/11/2026 (inspirés de MotionLab) =====
+// SOUS-TITRES MOT À MOT : data = contenu de src/sous_titres.json (fabriqué par scripts/sous_titres.py)
+// Le mot dit à l'instant passe sur une pastille bleue ; le bloc arrive avec un petit pop. Zone sûre x 60 -> 920.
+export type CapData = {taille: number; blocs: {t0: number; t1: number; mots: [number, string][]}[]};
+export const Caption: React.FC<{data: CapData; top?: number; from?: number; until?: number; upper?: boolean}> = ({data, top = 1250, from = 0, until = 9999, upper = false}) => {
+  const t = useT(); if (t < from || t > until) return null;
+  const b = data.blocs.find((x) => t >= x.t0 && t < x.t1); if (!b) return null;
+  const k = sp(t, b.t0, 13); const size = data.taille;
+  return <div style={{position: 'absolute', top, left: 60, width: 860, display: 'flex', justifyContent: 'center', transform: `scale(${0.85 + 0.15 * k})`, opacity: Math.min(1, k * 2)}}>
+   <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '4px 6px', padding: '10px 14px', borderRadius: 30, background: 'rgba(4,4,10,0.62)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', boxShadow: '0 10px 40px rgba(0,0,0,0.45)'}}>
+    {b.mots.map(([s, w], i) => { const next = i + 1 < b.mots.length ? b.mots[i + 1][0] : b.t1; const on = t >= s && t < next; const said = t >= s; const kk = sp(t, s, 12);
+      return <span key={i} style={{fontFamily: 'Pop', fontWeight: 700, fontSize: size, lineHeight: 1.25, color: said ? '#fff' : 'rgba(255,255,255,0.8)', padding: '0 16px', borderRadius: 18,
+        background: on ? ELEC : 'transparent', boxShadow: on ? `0 0 30px ${ELEC}` : 'none', transform: `scale(${on ? 1 + 0.08 * kk : 1})`, display: 'inline-block',
+        }}>{upper ? w.toUpperCase() : w}</span>; })}
+  </div></div>;
+};
+// ACCROCHE « COUP DE POING » : chaque mot tombe en gros au moment où il est dit (zoom 1,6 -> 1 + petite secousse).
+// words = [[seconde, mot, couleur?], …] ; à utiliser juste APRÈS le titre de couverture (qui reste obligatoire à la frame 0).
+export const HookPunch: React.FC<{words: W[]; t1: number; top?: number; size?: number}> = ({words, t1, top = 300, size = 104}) => {
+  const t = useT(); if (t < words[0][0] || t > t1 + 0.3) return null; const o = lin(t, t1, t1 + 0.3);
+  const last = words.filter(([a]) => t >= a).pop(); const shake = last ? Math.max(0, 1 - (t - last[0]) / 0.18) : 0;
+  return <div style={{position: 'absolute', top, left: 60, width: 860, textAlign: 'center', opacity: 1 - o, filter: o > 0 ? `blur(${o * 16}px)` : undefined,
+    transform: `translate(${Math.sin(t * 90) * 6 * shake}px, ${Math.cos(t * 80) * 4 * shake}px)`}}>
+    {words.map(([a, w, c], i) => { if (t < a) return null; const k = sp(t, a, 11);
+      return <span key={i} style={{display: 'inline-block', margin: '0 12px', fontFamily: 'Pop', fontWeight: 700, fontSize: size, lineHeight: 1.08, letterSpacing: -2, color: c || '#fff',
+        transform: `scale(${1.6 - 0.6 * k})`, opacity: Math.min(1, k * 2.5), textShadow: TS}}>{w}</span>; })}
+  </div>;
+};
