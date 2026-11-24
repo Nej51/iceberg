@@ -34,8 +34,9 @@ const End: React.FC = () => {
   const k = sp(t, 58.85, 10);
   return <>
     {t < 59.1 && <div style={{opacity: 1 - lin(t, 58.7, 59.0)}}>
-      <Sent top={760} t0={56.26} t1={59.1} words={[[56.3, 'Enregistre'], [56.8, 'cette vidéo', ELEC]]} size={84} />
-      <div style={{position: 'absolute', top: 880, width: 1080, textAlign: 'center', fontFamily: 'Int', fontWeight: 600, fontSize: 44, color: 'rgba(255,255,255,0.65)', opacity: lin(t, 57.2, 57.6)}}>pour la retrouver quand tu en auras besoin</div>
+      <Sent top={720} t0={56.26} t1={59.1} words={[[56.3, 'Enregistre']]} size={96} />
+      <Sent top={830} t0={56.26} t1={59.1} words={[[56.8, 'cette vidéo', ELEC]]} size={96} />
+      <div style={{position: 'absolute', top: 975, width: 1080, textAlign: 'center', fontFamily: 'Int', fontWeight: 600, fontSize: 44, color: 'rgba(255,255,255,0.65)', opacity: lin(t, 57.2, 57.6)}}>pour la retrouver quand tu en auras besoin</div>
     </div>}
     {t >= 58.8 && <>
       <div style={{position: 'absolute', left: 240, top: 600, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(47,91,255,0.35), transparent 65%)', filter: 'blur(40px)', opacity: k}} />
@@ -56,7 +57,8 @@ export const Video: React.FC = () => {
     <VideoLayer />
 
     {/* ACCROCHE */}
-    <CoverTitle line="VOICI L’" keyword="IPHONE 20" size={118} />
+    {t < 2.1 && <AbsoluteFill style={{background: 'radial-gradient(ellipse 70% 30% at 50% 50%, rgba(0,0,0,0.55), rgba(0,0,0,0.25))', opacity: 1 - lin(t, 1.6, 2.0)}} />}
+    <CoverTitle line="VOICI" keyword="L’IPHONE 20" size={112} />
     <Sent top={L1} t0={2.0} t1={3.8} words={[[2.0, 'Pas d’iPhone 19 Pro']]} size={S1} />
     <Sent top={L2} t0={2.0} t1={3.8} words={[[2.46, 'mais un'], [3.04, 'iPhone 20 Pro', ELEC]]} size={S1} />
     <Sent top={L1} t0={3.8} t1={6.6} words={[[3.82, 'aux bords'], [4.24, 'incurvés', ELEC]]} size={S1} />
