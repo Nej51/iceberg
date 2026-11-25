@@ -33,3 +33,4 @@ Les sujets marqués « ? » sont devinés d’après le titre : Nej peut les cor
 
 ## Idées pas encore faites
 Cacher les photos des cadeaux · Passer sur son nouvel iPhone (Démarrage rapide) · Accès guidé pour les enfants · iPhone qui s'éteint au froid · Doublons de photos · Limite de charge 80 % · Mode d'alimentation adaptatif · Trier les SMS d'inconnus · Masquer une app · Copier le texte d'une photo · Traduction en direct pendant un appel · Devises dans la Calculatrice · Partager le code Wi-Fi · Retrouver sa voiture garée · App Mesures
+- 2026-11-25 — TON IPHONE APPELLE À [L’AIDE] (sans voix) — 1re version SANS voix off ni musique (29 s, tout à l'écran) du raccourci « Au secours » ; composition « Muet » (kit/src/au_secours_muet.tsx)
